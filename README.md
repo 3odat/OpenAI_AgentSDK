@@ -1,9 +1,3 @@
-Perfect — you uploaded the **actual `Agent` class from the OpenAI Agents SDK** 🎯
-
-Let’s do what we planned: a **deep but simple breakdown** of how it works — line by line, section by section — so you can understand exactly what each part does, *why it exists*, and *how it connects* to the rest of the SDK (Runner, tools, handoffs, guardrails, etc.).
-
----
-
 ## 🧱 File Overview
 
 The file defines:
