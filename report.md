@@ -9,22 +9,22 @@ There are two main phases in a RAG system: **Indexing** (Loading your data) and 
 ```mermaid
 graph TD
     subgraph "Phase 1: Indexing (Preparation)"
-        A[Documents (PDF/Txt)] -->|Load| B(Document Loader)
-        B -->|Split| C(Text Splitter)
-        C -->|Chunks| D(Embedding Model)
-        D -->|Vectors| E[(Vector Store / FAISS)]
+        A["Documents (PDF/Txt)"] -->|Load| B("Document Loader")
+        B -->|Split| C("Text Splitter")
+        C -->|Chunks| D("Embedding Model")
+        D -->|Vectors| E[("Vector Store / FAISS")]
     end
 
     subgraph "Phase 2: Retrieval & Generation (Runtime)"
-        U[User Question] -->|Embed| F(Embedding Model)
-        F -->|Query Vector| G{Similarity Search}
+        U["User Question"] -->|Embed| F("Embedding Model")
+        F -->|Query Vector| G{"Similarity Search"}
         E -->|Retrieve Matches| G
-        G -->|Top K Chunks| H[Context]
+        G -->|Top K Chunks| H["Context"]
         
-        U --> I[Prompt Template]
+        U --> I["Prompt Template"]
         H --> I
-        I -->|Prompt with Context| J[Ollama LLM (llama3.1)]
-        J -->|Answer| K[Final Response]
+        I -->|Prompt with Context| J["Ollama LLM (llama3.1)"]
+        J -->|Answer| K["Final Response"]
     end
     
     style E fill:#f96,stroke:#333,stroke-width:2px
